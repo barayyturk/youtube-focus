@@ -6,32 +6,6 @@ This is a free-to-run Manifest V3 YouTube focus and content blocker. Its first
 working release uses local keyword matching and does not call YouTube, an LLM,
 or any paid service.
 
-## Architecture
-
-```text
-YouTube tab
-  └─ content.js
-      ├─ watches YouTube SPA history and navigation events
-      ├─ identifies /watch, /shorts, and /live video IDs
-      └─ sends YOUTUBE_VIDEO_NAVIGATED to the service worker
-
-Manifest V3 service worker
-  ├─ receives navigation events from every YouTube tab
-  ├─ stores the latest per-tab state in chrome.storage.session
-  └─ owns the future relevance decision and blocking command path
-
-Future popup/options UI
-  ├─ writes the active topic, mode, and user preferences
-  └─ can save the current video as a local anchor
-
-Local relevance engine
-  ├─ scores the visible title/description against the topic or anchor
-  └─ pauses off-topic videos and shows a focus overlay
-
-Future optional API route
-  └─ can add transcript/LLM classification without changing navigation flow
-```
-
 ## Current behavior
 
 - Detects the first page load.
