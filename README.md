@@ -117,5 +117,3 @@ YouTube Focus is designed to work locally in your browser.
 This project is published without a license.
 
 All rights are reserved by the copyright holder. You may view the source code, but you may not copy, modify, redistribute, sublicense, or use it commercially without permission.
-
-Since the project has no license, do not create a `LICENSE` file in the repository.
